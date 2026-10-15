@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#FAF6EE"/>
+  <g fill="none" stroke="#4d8743" stroke-opacity="0.25" stroke-width="2">
+    <path d="M100 100c40 40 60 80 60 120a60 60 0 1 1-120 0c0-40 20-80 60-120z"/>
+    <path d="M1100 450c40 40 60 80 60 120a60 60 0 1 1-120 0c0-40 20-80 60-120z"/>
+  </g>
+  <text x="600" y="290" text-anchor="middle" font-family="Georgia, serif" font-size="88" font-weight="bold" fill="#30562c">Chaitu&#8217;s Naturals</text>
+  <text x="600" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#6B4A2F">Handmade Herbal Hair &amp; Skin Care</text>
+  <text x="600" y="410" text-anchor="middle" font-family="Verdana, sans-serif" font-size="24" fill="#6b6257">Order easily on WhatsApp</text>
+</svg>
