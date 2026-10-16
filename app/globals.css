@@ -31,9 +31,14 @@ body {
   }
 }
 
-/* Decorative leaf pattern: pure CSS/SVG, no stock imagery */
+/* Decorative paper/kraft texture: pure CSS gradients, calm and subtle.
+   Replaces the busier leaf motif. No external imagery. */
 .leaf-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%234d8743' stroke-opacity='0.14' stroke-width='1.4'%3E%3Cpath d='M36 8c8 8 12 16 12 24a12 12 0 1 1-24 0c0-8 4-16 12-24z'/%3E%3Cpath d='M36 20v34'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: #faf6ee;
+  background-image:
+    radial-gradient(ellipse at 18% 8%, rgba(77, 135, 67, 0.06), transparent 55%),
+    radial-gradient(ellipse at 85% 92%, rgba(107, 74, 47, 0.06), transparent 50%),
+    repeating-linear-gradient(0deg, rgba(107, 74, 47, 0.022) 0 1px, transparent 1px 7px);
 }
 
 /* Focus visibility for keyboard users */
@@ -45,4 +50,88 @@ select:focus-visible {
   outline: 3px solid #4d8743;
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* ---------------------------------------------------------------------------
+   Premium herbal refinements — VISUAL ONLY.
+   No markup, IDs, classes, copy, routes, or behavior are changed below.
+   Only presentation (colors are the existing tokens; only rendering refined).
+   --------------------------------------------------------------------------- */
+
+/* 1. Refined serif headings: tighter, balanced, generous line height */
+h1,
+h2 {
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+/* 2. Section rhythm: ~88px vertical padding on laptop (56px mobile untouched) */
+@media (min-width: 1024px) {
+  #products,
+  #reviews {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+}
+
+/* 3. Sticky header: refined cream with a soft shadow under the beige border */
+header.sticky {
+  box-shadow: 0 4px 14px rgba(74, 50, 32, 0.06);
+}
+
+/* 4. Product card names: capitalize + slightly lighter serif weight */
+#products article a {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+/* 5. Star rows: keep stars + count on one line (phone cards included) */
+#products [role='img'],
+#reviews [role='img'],
+[aria-labelledby='pd-reviews'] [role='img'] {
+  white-space: nowrap;
+}
+
+/* 6. Contrast fix: stone-400 body text (≈2.5:1 on cream) darkened to stone-500 value */
+main .text-stone-400 {
+  color: #78716c;
+}
+
+/* 7. Order buttons: most prominent on the card — taller, airy */
+main a[href^='https://wa.me'] {
+  min-height: 48px;
+  letter-spacing: 0.01em;
+}
+
+/* 8. Primary Shop Now button: gentle letter spacing */
+main a[href='#products'] {
+  letter-spacing: 0.5px;
+}
+
+/* 9. Review blocks: warm beige cards, matching borders */
+[aria-labelledby='pd-reviews'] article,
+#reviews li {
+  background-color: #f1e8d7;
+  border-color: #e7d9be;
+}
+
+/* 10. Consent + Turnstile separation: subtle top border above the checkbox row */
+form label:has(> input[type='checkbox']) {
+  border-top: 1px solid #e7d9be;
+  padding-top: 0.75rem;
+}
+
+/* 11. Footer icon buttons: clear hover state on the white circles */
+footer a.bg-white {
+  transition: background-color 0.2s ease;
+}
+footer a.bg-white:hover {
+  background-color: #f1e8d7;
+}
+
+/* 12. Client logo: drop any white box on light surfaces (transparent PNG still preferred) */
+header img[src='/logo.png'],
+#home img[src='/logo.png'] {
+  mix-blend-mode: multiply;
 }

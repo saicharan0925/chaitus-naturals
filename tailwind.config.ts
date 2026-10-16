@@ -31,12 +31,12 @@ module.exports = {
         },
       },
       fontFamily: {
-        serif: ['Georgia', '"Times New Roman"', 'Merriweather', 'serif'],
+        serif: ['"Palatino Linotype"', '"Book Antiqua"', 'Georgia', '"Times New Roman"', 'Merriweather', 'serif'],
         sans: ['system-ui', '-apple-system', '"Segoe UI"', 'Roboto', 'Inter', 'sans-serif'],
       },
       boxShadow: {
-        card: '0 2px 12px rgba(74, 50, 32, 0.10)',
-        'card-hover': '0 10px 28px rgba(74, 50, 32, 0.16)',
+        card: '0 2px 14px rgba(74, 50, 32, 0.10)',
+        'card-hover': '0 14px 32px rgba(74, 50, 32, 0.16)',
       },
     },
   },
