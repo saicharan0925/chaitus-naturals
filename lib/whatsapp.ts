@@ -3,10 +3,10 @@
 // the message structure without asking the client.
 
 export const WHATSAPP_NUMBER =
-  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '917396457733';
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '917396345773';
 
 export const SITE_URL =
-  (process.env.NEXT_PUBLIC_SITE_URL || 'https://chaitusnaturals.pages.dev').replace(/\/$/, '');
+  (process.env.NEXT_PUBLIC_SITE_URL || 'https://chaitus-naturals.pages.dev').replace(/\/$/, '');
 
 interface OrderDetails {
   productName: string;

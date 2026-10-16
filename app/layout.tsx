@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import HeadlineBanner from '@/components/HeadlineBanner';
 import Footer from '@/components/Footer';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://chaitusnaturals.pages.dev';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://chaitus-naturals.pages.dev';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: "Chaitu's Naturals",
     description: 'Handmade herbal hair care, skin care, soaps, lip balms, neem combs and loofah.',
     url: SITE_URL,
-    telephone: '+91-7396457733',
+    telephone: '+91-7396345773',
     sameAs: ['https://www.instagram.com/chaitus_naturals'],
     priceRange: '₹₹',
   };

@@ -18,7 +18,7 @@ export default function ContactSection() {
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href="https://wa.me/917396457733?text=Hello%20Chaitu%27s%20Naturals%2C%20I%20have%20a%20question."
+              href="https://wa.me/917396345773?text=Hello%20Chaitu%27s%20Naturals%2C%20I%20have%20a%20question."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-[44px] items-center rounded-full bg-[#1FA855] px-8 py-3 text-base font-semibold text-white transition hover:brightness-95"

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://chaitusnaturals.pages.dev';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://chaitus-naturals.pages.dev';
 
 export const dynamic = 'force-static';
 

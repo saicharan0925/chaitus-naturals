@@ -20,13 +20,13 @@ export default function Footer() {
             <InstagramIcon />
           </a>
           <a
-            href="https://wa.me/917396457733"
+            href="https://wa.me/917396345773"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat with Chaitu's Naturals on WhatsApp (opens in new tab)"
             className="inline-flex min-h-[44px] items-center rounded-full bg-white/10 px-5 text-sm font-semibold"
           >
-            WhatsApp: 73964 57733
+            WhatsApp: 73963 45773
           </a>
         </div>
         <p className="text-xs text-cream/70">© {year} Chaitu&apos;s Naturals. All rights reserved.</p>

@@ -1,6 +1,6 @@
 # Chaitu's Naturals — Handmade Herbal Hair & Skin Care
 
-Next.js (App Router, static export) + Tailwind + Framer Motion storefront, Supabase (Postgres + Auth + Storage) backend, Cloudflare Turnstile review protection, hosted free on Cloudflare Pages at `chaitusnaturals.pages.dev`.
+Next.js (App Router, static export) + Tailwind + Framer Motion storefront, Supabase (Postgres + Auth + Storage) backend, Cloudflare Turnstile review protection, hosted free on Cloudflare Pages at `chaitus-naturals.pages.dev`.
 
 100% free stack: no paid services, no paid plans, no paid domain. No AI/stock imagery — decoration is CSS/SVG only; all product photos are uploaded by the client. All product/marketing text is client-written.
 
@@ -34,7 +34,7 @@ npm run dev                  # open http://localhost:3000
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Same page → `anon public` key (never the `service_role` key) |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Cloudflare Dashboard → Turnstile → Add site → copy Site key |
 
-Optional: `NEXT_PUBLIC_SITE_URL` (default `https://chaitusnaturals.pages.dev`), `NEXT_PUBLIC_WHATSAPP_NUMBER` (default `917396457733`).
+Optional: `NEXT_PUBLIC_SITE_URL` (default `https://chaitus-naturals.pages.dev`), `NEXT_PUBLIC_WHATSAPP_NUMBER` (default `917396345773`).
 
 Build the static site any time with `npm run build` (outputs `./out/`).
 
@@ -55,7 +55,7 @@ Build the static site any time with `npm run build` (outputs `./out/`).
 
 ## 3. Cloudflare Turnstile (free CAPTCHA)
 
-1. dash.cloudflare.com → Turnstile → Add site → hostname `chaitusnaturals.pages.dev` (+ `localhost` for testing, optional).
+1. dash.cloudflare.com → Turnstile → Add site → hostname `chaitus-naturals.pages.dev` (+ `localhost` for testing, optional).
 2. Copy the **Site key** → `NEXT_PUBLIC_TURNSTILE_SITE_KEY`.
 3. Copy the **Secret key** → `supabase secrets set TURNSTILE_SECRET_KEY=…` (step 2.5).
 
@@ -65,7 +65,7 @@ Build the static site any time with `npm run build` (outputs `./out/`).
 2. Cloudflare Dashboard → Pages → Create → Connect to Git → select the repo.
 3. Build settings: Framework preset **Next.js (Static HTML Export)**, Build command `npm run build`, Build output directory `out`, Node version 18+.
 4. Environment variables: add the 3 `NEXT_PUBLIC_*` values (same as `.env.local`).
-5. Deploy → you get `https://chaitusnaturals.pages.dev`. The `public/_headers` file is copied to `out/_headers` automatically and applies the security headers.
+5. Deploy → you get `https://chaitus-naturals.pages.dev`. The `public/_headers` file is copied to `out/_headers` automatically and applies the security headers.
 
 Every `git push` redeploys automatically.
 

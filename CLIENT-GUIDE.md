@@ -1,7 +1,7 @@
 # CLIENT GUIDE — Chaitu's Naturals Shop Manager
 ### How to use your website (no computer knowledge needed)
 
-Open this on your phone: **https://chaitusnaturals.pages.dev/admin**
+Open this on your phone: **https://chaitus-naturals.pages.dev/admin**
 
 > [Screenshot placeholder: the admin login page]
 
