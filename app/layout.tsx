@@ -3,6 +3,8 @@ import './globals.css';
 import Header from '@/components/Header';
 import HeadlineBanner from '@/components/HeadlineBanner';
 import Footer from '@/components/Footer';
+import CartDrawer from '@/components/CartDrawer';
+import { CartProvider } from '@/lib/cart';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://chaitus-naturals.pages.dev';
 
@@ -56,9 +58,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} />
         <HeadlineBanner />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <CartProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <CartDrawer />
+        </CartProvider>
       </body>
     </html>
   );

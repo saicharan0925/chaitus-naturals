@@ -16,6 +16,7 @@ import { buildWhatsAppLink } from '@/lib/whatsapp';
 import StarRating from '@/components/StarRating';
 import ReviewForm from '@/components/ReviewForm';
 import ReviewPhotos from '@/components/ReviewPhotos';
+import { useCart } from '@/lib/cart';
 
 export const dynamic = 'force-static';
 
@@ -27,6 +28,7 @@ function ProductDetail() {
   const [imgIdx, setImgIdx] = useState(0);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  const { add, openCart } = useCart();
 
   const load = useCallback(async () => {
     if (!slug) {
@@ -174,6 +176,23 @@ function ProductDetail() {
           ) : (
             <button type="button" disabled className="mt-2 inline-flex min-h-[44px] cursor-not-allowed items-center justify-center rounded-xl bg-stone-200 px-6 py-3 font-semibold text-stone-500">
               Out of Stock
+            </button>
+          )}
+          {product.in_stock && (
+            <button
+              type="button"
+              onClick={() => {
+                add({
+                  slug: product.slug,
+                  name: product.name,
+                  unitPrice: final,
+                  image: product.images[0]?.image_url ?? '',
+                });
+                openCart();
+              }}
+              className="inline-flex min-h-[44px] items-center justify-center rounded-xl border-2 border-leaf-700 px-6 py-3 font-semibold text-leaf-700 transition hover:bg-leaf-50"
+            >
+              Add to Cart
             </button>
           )}
         </div>

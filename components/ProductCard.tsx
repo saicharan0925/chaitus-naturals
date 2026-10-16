@@ -9,10 +9,12 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import type { ProductWithImages } from '@/lib/types';
 import { finalPrice, formatINR, isOfferActive, offerBadge } from '@/lib/pricing';
 import { buildWhatsAppLink } from '@/lib/whatsapp';
+import { useCart } from '@/lib/cart';
 import StarRating from './StarRating';
 
 export default function ProductCard({ product }: { product: ProductWithImages }) {
   const reduce = useReducedMotion();
+  const { add, openCart } = useCart();
   const images = product.images.length > 0 ? product.images : [];
   const [idx, setIdx] = useState(0);
   const [touchX, setTouchX] = useState<number | null>(null);
@@ -35,6 +37,12 @@ export default function ProductCard({ product }: { product: ProductWithImages })
   const next = (e: React.MouseEvent | React.TouchEvent | React.KeyboardEvent) => {
     e.stopPropagation();
     setIdx((i) => (i + 1) % n);
+  };
+
+  const handleAdd = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    add({ slug: product.slug, name: product.name, unitPrice: final, image: mainUrl });
+    openCart();
   };
 
   return (
@@ -135,15 +143,25 @@ export default function ProductCard({ product }: { product: ProductWithImages })
         </div>
         <StarRating avg={product.avg_rating} count={product.review_count} />
         {product.in_stock ? (
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-1 inline-flex min-h-[44px] items-center justify-center rounded-xl bg-[#1FA855] px-3 py-2.5 text-sm font-semibold text-white transition hover:brightness-95 sm:mt-2 sm:px-4 sm:text-[15px]"
-            aria-label={`Order ${product.name} on WhatsApp`}
-          >
-            Order on WhatsApp
-          </a>
+          <>
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 inline-flex min-h-[44px] items-center justify-center rounded-xl bg-[#1FA855] px-3 py-2.5 text-sm font-semibold text-white transition hover:brightness-95 sm:mt-2 sm:px-4 sm:text-[15px]"
+              aria-label={`Order ${product.name} on WhatsApp`}
+            >
+              Order on WhatsApp
+            </a>
+            <button
+              type="button"
+              onClick={handleAdd}
+              aria-label={`Add ${product.name} to cart`}
+              className="inline-flex min-h-[44px] items-center justify-center rounded-xl border-2 border-leaf-700 px-3 py-2 text-sm font-semibold text-leaf-700 transition hover:bg-leaf-50 sm:text-[15px]"
+            >
+              Add to Cart
+            </button>
+          </>
         ) : (
           <button type="button" disabled className="mt-1 inline-flex min-h-[44px] cursor-not-allowed items-center justify-center rounded-xl bg-stone-200 px-3 py-2.5 text-sm font-semibold text-stone-500 sm:mt-2 sm:px-4 sm:text-[15px]">
             Out of Stock
