@@ -1,6 +1,7 @@
-// Footer: brand, Instagram, WhatsApp, copyright. No admin links.
+// Footer: brand, Instagram + WhatsApp logo buttons, copyright. No admin links.
 
 import InstagramIcon from './InstagramIcon';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -20,13 +21,13 @@ export default function Footer() {
             <InstagramIcon />
           </a>
           <a
-            href="https://wa.me/917396345773"
+            href="https://wa.me/917396345773?text=Hello%20Chaitu%27s%20Naturals%2C%20I%20have%20a%20question."
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat with Chaitu's Naturals on WhatsApp (opens in new tab)"
-            className="inline-flex min-h-[44px] items-center rounded-full bg-white/10 px-5 text-sm font-semibold"
+            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-white/10"
           >
-            WhatsApp: 73963 45773
+            <WhatsAppIcon withBackground={false} />
           </a>
         </div>
         <p className="text-xs text-cream/70">© {year} Chaitu&apos;s Naturals. All rights reserved.</p>

@@ -3,6 +3,7 @@
 // Contact section: WhatsApp button + Instagram link.
 
 import InstagramIcon from './InstagramIcon';
+import WhatsAppIcon from './WhatsAppIcon';
 import Reveal from './Reveal';
 
 export default function ContactSection() {
@@ -21,8 +22,9 @@ export default function ContactSection() {
               href="https://wa.me/917396345773?text=Hello%20Chaitu%27s%20Naturals%2C%20I%20have%20a%20question."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-[44px] items-center rounded-full bg-[#1FA855] px-8 py-3 text-base font-semibold text-white transition hover:brightness-95"
+              className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-[#1FA855] px-8 py-3 text-base font-semibold text-white transition hover:brightness-95"
             >
+              <WhatsAppIcon withBackground={false} size={20} />
               Chat on WhatsApp
             </a>
             <a

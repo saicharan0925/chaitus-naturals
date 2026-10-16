@@ -5,6 +5,7 @@
 
 import { useState } from 'react';
 import InstagramIcon from './InstagramIcon';
+import WhatsAppIcon from './WhatsAppIcon';
 
 const NAV = [
   { href: '#home', label: 'Home' },
@@ -36,8 +37,26 @@ export default function Header() {
           >
             <InstagramIcon />
           </a>
+          <a
+            href="https://wa.me/917396345773?text=Hello%20Chaitu%27s%20Naturals%2C%20I%20have%20a%20question."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat with Chaitu's Naturals on WhatsApp (opens in new tab)"
+            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center"
+          >
+            <WhatsAppIcon withBackground={false} />
+          </a>
         </nav>
         <div className="flex items-center gap-2 md:hidden">
+          <a
+            href="https://wa.me/917396345773?text=Hello%20Chaitu%27s%20Naturals%2C%20I%20have%20a%20question."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat with Chaitu's Naturals on WhatsApp (opens in new tab)"
+            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center"
+          >
+            <WhatsAppIcon withBackground={false} />
+          </a>
           <a
             href="https://www.instagram.com/chaitus_naturals"
             target="_blank"
