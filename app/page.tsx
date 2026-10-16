@@ -114,7 +114,7 @@ export default function HomePage() {
         {!loading && !error && products.length === 0 && (
           <p className="mt-8 text-center text-stone-500">New products are coming soon — please check back or message us on WhatsApp.</p>
         )}
-        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
           {products.map((p, i) => (
             <Reveal key={p.id} delay={Math.min(i % 4, 3) * 0.06}>
               <ProductCard product={p} />

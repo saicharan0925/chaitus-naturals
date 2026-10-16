@@ -91,7 +91,7 @@ export default function ProductCard({ product }: { product: ProductWithImages })
               type="button"
               onClick={prev}
               aria-label="Previous photo"
-              className="absolute left-2 top-1/2 flex min-h-[44px] min-w-[44px] -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-xl text-stone-700 shadow"
+              className="absolute left-2 top-1/2 hidden min-h-[44px] min-w-[44px] -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-xl text-stone-700 shadow sm:flex"
             >
               ‹
             </button>
@@ -99,7 +99,7 @@ export default function ProductCard({ product }: { product: ProductWithImages })
               type="button"
               onClick={next}
               aria-label="Next photo"
-              className="absolute right-2 top-1/2 flex min-h-[44px] min-w-[44px] -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-xl text-stone-700 shadow"
+              className="absolute right-2 top-1/2 hidden min-h-[44px] min-w-[44px] -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-xl text-stone-700 shadow sm:flex"
             >
               ›
             </button>
@@ -110,10 +110,10 @@ export default function ProductCard({ product }: { product: ProductWithImages })
         )}
       </div>
 
-      {/* Body */}
-      <div className="flex flex-1 flex-col gap-2 p-4">
+      {/* Body — compact so 2 cards fit per row on phones */}
+      <div className="flex flex-1 flex-col gap-1.5 p-3 sm:gap-2 sm:p-4">
         <div className="flex items-start justify-between gap-2">
-          <a href={`/product/?slug=${encodeURIComponent(product.slug)}`} className="font-serif text-lg font-bold leading-snug text-leaf-900 hover:underline">
+          <a href={`/product/?slug=${encodeURIComponent(product.slug)}`} className="font-serif text-base font-bold leading-snug text-leaf-900 hover:underline sm:text-lg">
             {product.name}
           </a>
           {product.in_stock ? (
@@ -122,15 +122,15 @@ export default function ProductCard({ product }: { product: ProductWithImages })
             <span className="shrink-0 rounded-full bg-stone-200 px-2.5 py-1 text-xs font-semibold text-stone-500">Out of Stock</span>
           )}
         </div>
-        <p className="line-clamp-2 text-sm text-stone-600">{product.description}</p>
-        <div className="flex items-baseline gap-2">
+        <p className="line-clamp-1 text-xs text-stone-600 sm:line-clamp-2 sm:text-sm">{product.description}</p>
+        <div className="flex flex-wrap items-baseline gap-x-2">
           {offer ? (
             <>
-              <span className="text-sm text-stone-400 line-through">{formatINR(product.price)}</span>
-              <span className="text-xl font-bold text-bark-dark">{formatINR(final)}</span>
+              <span className="text-xs text-stone-400 line-through sm:text-sm">{formatINR(product.price)}</span>
+              <span className="text-lg font-bold text-bark-dark sm:text-xl">{formatINR(final)}</span>
             </>
           ) : (
-            <span className="text-xl font-bold text-bark-dark">{formatINR(product.price)}</span>
+            <span className="text-lg font-bold text-bark-dark sm:text-xl">{formatINR(product.price)}</span>
           )}
         </div>
         <StarRating avg={product.avg_rating} count={product.review_count} />
@@ -139,13 +139,13 @@ export default function ProductCard({ product }: { product: ProductWithImages })
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 inline-flex min-h-[44px] items-center justify-center rounded-xl bg-[#1FA855] px-4 py-2.5 text-[15px] font-semibold text-white transition hover:brightness-95"
+            className="mt-1 inline-flex min-h-[44px] items-center justify-center rounded-xl bg-[#1FA855] px-3 py-2.5 text-sm font-semibold text-white transition hover:brightness-95 sm:mt-2 sm:px-4 sm:text-[15px]"
             aria-label={`Order ${product.name} on WhatsApp`}
           >
             Order on WhatsApp
           </a>
         ) : (
-          <button type="button" disabled className="mt-2 inline-flex min-h-[44px] cursor-not-allowed items-center justify-center rounded-xl bg-stone-200 px-4 py-2.5 text-[15px] font-semibold text-stone-500">
+          <button type="button" disabled className="mt-1 inline-flex min-h-[44px] cursor-not-allowed items-center justify-center rounded-xl bg-stone-200 px-3 py-2.5 text-sm font-semibold text-stone-500 sm:mt-2 sm:px-4 sm:text-[15px]">
             Out of Stock
           </button>
         )}
