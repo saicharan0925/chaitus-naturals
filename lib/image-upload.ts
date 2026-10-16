@@ -28,7 +28,7 @@ export function validateImageFile(file: File): string | null {
 }
 
 /** Downscale to MAX_WIDTH px wide, return a compressed Blob. */
-export function compressImage(file: File, realType: string): Promise<Blob> {
+export function compressImage(file: File, realType: string, quality = 0.82): Promise<Blob> {
   return new Promise((resolve, reject) => {
     const url = URL.createObjectURL(file);
     const img = new Image();
@@ -47,7 +47,7 @@ export function compressImage(file: File, realType: string): Promise<Blob> {
       canvas.toBlob(
         (blob) => (blob ? resolve(blob) : reject(new Error('Could not compress image.'))),
         outType,
-        0.82,
+        quality,
       );
     };
     img.onerror = () => {

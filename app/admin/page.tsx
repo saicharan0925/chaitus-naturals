@@ -770,6 +770,20 @@ function ReviewsManager() {
           <li key={r.id} className="rounded-2xl border border-sand bg-white p-4">
             <p className="text-sm text-stone-500">{r.product_name} · {'★'.repeat(r.rating)}{'☆'.repeat(5 - r.rating)} · {r.reviewer_name}</p>
             <p className="mt-1 text-[15px] text-stone-700">{r.review_text}</p>
+            {(r.photo_urls?.length ?? 0) > 0 && (
+              <div className="mt-2 flex gap-2 overflow-x-auto pb-1" aria-label="Customer photos">
+                {(r.photo_urls ?? []).map((u, i) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    key={`${u}-${i}`}
+                    src={u}
+                    alt={`Customer photo ${i + 1} for ${r.product_name}`}
+                    className="h-16 w-16 shrink-0 rounded-lg border border-sand object-cover"
+                    loading="lazy"
+                  />
+                ))}
+              </div>
+            )}
             <div className="mt-2 grid grid-cols-3 gap-2">
               <button type="button" onClick={() => setApproved(r.id, true)} className="min-h-[44px] rounded-xl bg-leaf-700 font-semibold text-white">
                 Approve

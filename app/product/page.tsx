@@ -15,7 +15,7 @@ import { finalPrice, formatINR, isOfferActive, offerBadge } from '@/lib/pricing'
 import { buildWhatsAppLink } from '@/lib/whatsapp';
 import StarRating from '@/components/StarRating';
 import ReviewForm from '@/components/ReviewForm';
-import ContactSection from '@/components/ContactSection';
+import ReviewPhotos from '@/components/ReviewPhotos';
 
 export const dynamic = 'force-static';
 
@@ -191,6 +191,7 @@ function ProductDetail() {
               <article key={r.id} className="rounded-2xl border border-sand bg-white p-4">
                 <StarRating avg={r.rating} count={1} />
                 <p className="mt-2 text-[15px] text-stone-700">{r.review_text}</p>
+                <ReviewPhotos urls={r.photo_urls ?? []} productName={product.name} />
                 <p className="mt-2 text-sm text-stone-500">— {r.reviewer_name}</p>
               </article>
             ))}
@@ -200,7 +201,6 @@ function ProductDetail() {
           </div>
         </div>
       </section>
-      <ContactSection />
     </>
   );
 }

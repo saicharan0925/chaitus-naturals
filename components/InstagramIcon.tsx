@@ -1,5 +1,6 @@
 // Official Instagram gradient glyph as inline SVG (no external assets).
-// Used in header, contact section and footer.
+// Explicit width/height/viewBox/fill — does not rely on inherited text color.
+// Footer-only usage (header links only to WhatsApp contact).
 
 export default function InstagramIcon({ size = 22 }: { size?: number }) {
   return (
@@ -7,6 +8,7 @@ export default function InstagramIcon({ size = 22 }: { size?: number }) {
       width={size}
       height={size}
       viewBox="0 0 24 24"
+      fill="none"
       role="img"
       aria-label="Instagram"
       xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +23,7 @@ export default function InstagramIcon({ size = 22 }: { size?: number }) {
       </defs>
       <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="url(#ig-grad)" strokeWidth="2" />
       <circle cx="12" cy="12" r="4.2" fill="none" stroke="url(#ig-grad)" strokeWidth="2" />
-      <circle cx="17.4" cy="6.6" r="1.5" fill="url(#ig-grad)" />
+      <circle cx="17.4" cy="6.6" r="1.5" fill="url(#ig-grad)" stroke="none" />
     </svg>
   );
 }

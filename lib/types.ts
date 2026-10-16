@@ -47,5 +47,6 @@ export interface Review {
   rating: number;
   review_text: string;
   approved: boolean;
+  photo_urls: string[];
   created_at: string;
 }

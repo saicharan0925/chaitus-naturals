@@ -6,7 +6,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import Hero from '@/components/Hero';
 import ProductCard from '@/components/ProductCard';
-import ContactSection from '@/components/ContactSection';
 import Reveal from '@/components/Reveal';
 import StarRating from '@/components/StarRating';
 import { getSupabase } from '@/lib/supabase';
@@ -150,8 +149,6 @@ export default function HomePage() {
           )}
         </div>
       </section>
-
-      <ContactSection />
     </>
   );
 }

@@ -267,3 +267,21 @@ create policy "admin delete product photos"
   on storage.objects for delete
   to authenticated
   using (bucket_id = 'product-photos');
+
+-- ----------------------------------------------------------------------------
+-- CUSTOMER REVIEW PHOTOS (added later — run this block in the SQL editor too)
+-- Reviews carry up to 3 photo URLs (text[]). Uploads happen ONLY inside the
+-- submit-review Edge Function (service role, server side) under pending/,
+-- so anonymous browsers need no Storage write policy — public read only.
+-- ----------------------------------------------------------------------------
+alter table public.reviews add column if not exists photo_urls text[] not null default '{}';
+
+insert into storage.buckets (id, name, public)
+values ('review-photos', 'review-photos', true)
+on conflict (id) do nothing;
+
+drop policy if exists "public read review photos" on storage.objects;
+create policy "public read review photos"
+  on storage.objects for select
+  to anon, authenticated
+  using (bucket_id = 'review-photos');
